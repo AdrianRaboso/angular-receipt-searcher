@@ -22,8 +22,6 @@ export class RecipeSeekerComponent implements OnInit {
   ngOnInit(): void {
     Observable.fromEvent(this.seeker.nativeElement, 'keyup')
       .map((x: any) => x.target.value)
-      .debounceTime(300)
-      .distinctUntilChanged()
       .switchMap(word => this.recipeService.getFilteredRecipes(word))
       .subscribe((recipes: Recipe) => this.searchEvent.emit(recipes.results),
         (error) => this.showError());

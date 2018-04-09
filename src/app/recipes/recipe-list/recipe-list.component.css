@@ -9,7 +9,7 @@
     }
 
     .recipe-ingredients {
-        width: 50% !important;
+        width: 50%;
     }
     
     .recipe-ingredients::before {
@@ -18,7 +18,7 @@
     }
 
     .recipe-thumbnail {
-        width: 50% !important;
+        width: 50%;
     }
 }
 
@@ -46,8 +46,8 @@
 }
 
 .recipe-col {
-    padding-top: 1vh !important;
-    padding-bottom: 1vh !important;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 
 img {
