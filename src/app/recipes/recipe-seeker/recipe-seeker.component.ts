@@ -14,15 +14,14 @@ export class RecipeSeekerComponent implements OnInit {
   @Output() searchEvent = new EventEmitter();
   @ViewChild('seeker') seeker;
 
-  constructor(private recipeService: RecipeListService, public toastr: ToastsManager, vcr: ViewContainerRef) {
+  constructor(private recipeService: RecipeListService, private toastr: ToastsManager, vcr: ViewContainerRef) {
     this.firstSearch();
     this.toastr.setRootViewContainerRef(vcr);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     Observable.fromEvent(this.seeker.nativeElement, 'keyup')
-      .map((x: any) => x.target.value)
-      .switchMap(word => this.recipeService.getFilteredRecipes(word))
+      .switchMap((word: any) => this.recipeService.getFilteredRecipes(word.target.value))
       .subscribe((recipes: Recipe) => this.searchEvent.emit(recipes.results),
         (error) => this.showError());
   }
