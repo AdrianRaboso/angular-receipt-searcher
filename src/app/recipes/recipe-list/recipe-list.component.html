@@ -1,0 +1,17 @@
+<div class="row header-dark">
+  <div class="col-md-3 recipe-col text-center">Título</div>
+  <div class="col-md-6 recipe-col text-center">Ingredientes</div>
+  <div class="col-md-3 recipe-col text-center">Miniatura</div>
+</div>
+<div *ngFor="let recipe of dataSource" class="row recipe-row">
+  <div class="col-md-3 recipe-col recipe-title">
+    <a [href]="recipe.href" target="_blank">{{recipe.title}}</a>
+  </div>
+  <div class="col-md-6 recipe-col recipe-ingredients">{{recipe.ingredients}}</div>
+  <div class="col-md-3 recipe-col text-center recipe-thumbnail">
+    <img *ngIf="recipe.thumbnail" [src]="recipe.thumbnail" class="rounded" />
+  </div>
+</div>
+<div class="row" *ngIf="dataSource && dataSource.length <= 0">
+  <div class="col-md-12 recipe-col text-center text-danger">No hay resultados</div>
+</div>

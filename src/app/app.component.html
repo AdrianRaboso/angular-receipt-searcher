@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="fixed-seeker">
+    <h2>Buscador de recetas</h2>
+    <app-recipe-seeker (searchEvent)="searchEvent($event)"></app-recipe-seeker>
+  </div>
+  <app-recipe-list [dataSource]="dataSource"></app-recipe-list>
+</div>

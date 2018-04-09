@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Bootstrap styles */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* Toastr styles*/
+@import "~ng2-toastr/bundles/ng2-toastr.min.css";
